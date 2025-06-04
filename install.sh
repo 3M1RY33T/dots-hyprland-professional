@@ -2,51 +2,44 @@
 
 # AUTHOR: 3M1RY33T
 
-# Installer for AGS + Hyprland (dots-hyprland-professional) configuration
+set -e
 
-# === CONFIG ===
 REPO_URL="https://github.com/3M1RY33T/dots-hyprland-professional.git"
-DEST_DIR="$HOME/.config"
-AGS_DIR="$DEST_DIR/ags"
-HYPR_DIR="$DEST_DIR/hypr"
-BACKUP_DIR="$HOME/.local/state/hyprland-config-backups/$(date +%Y%m%d_%H%M%S)"
-KEY_FILE="$HOME/.local/state/ags/user/ai/deepseek_key.txt"
+TMP_DIR="/tmp/dots-install-temp"
+CONFIG_DIR="$HOME/.config/ags"
+STATE_DIR="$HOME/.local/state/ags/user/ai"
+BACKUP_DIR="$HOME/.local/backup-dotfiles-$(date +%s)"
 
-# === START ===
 echo "📦 Cloning configuration from $REPO_URL..."
-git clone --depth=1 "$REPO_URL" /tmp/config-temp
+git clone --depth=1 "$REPO_URL" "$TMP_DIR"
 
-# === BACKUP EXISTING CONFIGS ===
-echo "📦 Backing up configs that will be replaced..."
+echo "🛡️ Backing up current configuration..."
 mkdir -p "$BACKUP_DIR"
+cp -r "$CONFIG_DIR/modules/.configuration/default_options.jsonc" "$BACKUP_DIR/" 2>/dev/null || true
+cp -r "$CONFIG_DIR/services/deepseek.js" "$BACKUP_DIR/" 2>/dev/null || true
+cp -r "$CONFIG_DIR/modules/sideleft/apiwidgets.js" "$BACKUP_DIR/" 2>/dev/null || true
+cp -r "$CONFIG_DIR/modules/sideleft/apis/deepseek.js" "$BACKUP_DIR/" 2>/dev/null || true
 
-if [ -d "$AGS_DIR" ]; then
-  echo "🔄 Backing up existing AGS config..."
-  mv "$AGS_DIR" "$BACKUP_DIR/"
-fi
+echo "🔁 Applying DeepSeek integration..."
 
-if [ -d "$HYPR_DIR" ]; then
-  echo "🔄 Backing up existing Hyprland config..."
-  mv "$HYPR_DIR" "$BACKUP_DIR/"
-fi
+cp "$TMP_DIR/ags/modules/.configuration/default_options.jsonc" "$CONFIG_DIR/modules/.configuration/"
 
-# === INSTALL NEW CONFIG ===
-echo "📂 Copying AGS config to $AGS_DIR..."
-mkdir -p "$AGS_DIR"
-cp -r /tmp/config-temp/ags/* "$AGS_DIR/"
+# services/deepseek.js
+cp "$TMP_DIR/ags/services/deepseek.js" "$CONFIG_DIR/services/"
 
-echo "📂 Copying Hyprland config to $HYPR_DIR..."
-mkdir -p "$HYPR_DIR"
-cp -r /tmp/config-temp/hypr/* "$HYPR_DIR/"
+cp "$TMP_DIR/ags/modules/sideleft/apiwidgets.js" "$CONFIG_DIR/modules/sideleft/"
 
-# === CREATE DEEPSEEK KEY FILE IF MISSING ===
-echo "🔐 Creating DeepSeek key file..."
-mkdir -p "$(dirname "$KEY_FILE")"
-touch "$KEY_FILE"
+# apis/deepseek.js
+mkdir -p "$CONFIG_DIR/modules/sideleft/apis"
+cp "$TMP_DIR/ags/modules/sideleft/apis/deepseek.js" "$CONFIG_DIR/modules/sideleft/apis/"
 
-# === CLEANUP ===
-rm -rf /tmp/config-temp
+echo "🔐 Creating key file at $STATE_DIR/deepseek_key.txt..."
+mkdir -p "$STATE_DIR"
+touch "$STATE_DIR/deepseek_key.txt"
 
-echo "✅ Installation complete!"
-echo "🗂️ Existing Config Backup Path: $BACKUP_DIR"
-echo "🔑 DeepSeek key path: $KEY_FILE"
+echo "🧹 Cleaning up temporary files..."
+rm -rf "$TMP_DIR"
+
+echo "✅ DeepSeek integration complete!"
+echo "📁 Backups saved in: $BACKUP_DIR"
+echo "🔑 Add your DeepSeek API key to: $STATE_DIR/deepseek_key.txt"
