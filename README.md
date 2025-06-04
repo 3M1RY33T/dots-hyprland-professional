@@ -15,7 +15,6 @@ API models in the left sidebar (not including the existing ones from end-4/dots-
 - Deepseek
   - Provider: Deepseek 
 - Claude (Unfinished)
-- Copilot (Unfinished)
 
 ## Requirements
 
