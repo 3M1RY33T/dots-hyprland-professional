@@ -8,7 +8,7 @@ REPO_URL="https://github.com/3M1RY33T/dots-hyprland-professional.git"
 TMP_DIR="/tmp/dots-install-temp"
 CONFIG_DIR="$HOME/.config/ags"
 STATE_DIR="$HOME/.local/state/ags/user/ai"
-BACKUP_DIR="$HOME/.local/backup-dotfiles-$(date +%s)"
+BACKUP_DIR="$HOME/.local/state/backup-dotfiles-$(date +%s)"
 
 echo "📦 Cloning configuration from $REPO_URL..."
 git clone --depth=1 "$REPO_URL" "$TMP_DIR"
