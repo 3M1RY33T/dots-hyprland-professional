@@ -1,6 +1,6 @@
-# dots-hyprland Professional
+# dots-hyprland-professional
 
-This is a plugin to an existing configuration by end-4, special thanks to you for this groundbreaking Hyprland configuration!
+This is a plugin to an existing configuration by [end-4](https://github.com/end-4), special thanks to you for this groundbreaking Hyprland configuration!
 
 ## Motivation
 
@@ -18,9 +18,9 @@ API models in the left sidebar (not including the existing ones from end-4/dots-
 
 ## Requirements
 
-- Hyprland: https://github.com/hyprwm/Hyprland
-- AGS: https://github.com/Aylur/ags
-- end_4's Hyprland dotfiles: https://github.com/end-4/dots-hyprland
+- [Hyprland](https://github.com/hyprwm/Hyprland)
+- [AGS](https://github.com/Aylur/ags)
+- [end_4's Hyprland dotfiles](https://github.com/end-4/dots-hyprland)
 
 ## Setup
 
