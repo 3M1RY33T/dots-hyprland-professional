@@ -33,6 +33,16 @@ Go to your terminal (bash shell) and type:
 bash <(curl -sL https://raw.githubusercontent.com/3M1RY33T/dots-hyprland-professional/main/install.sh)
 ```
 
+Or for an offline installation, you can clone the repository and run the ``install.sh`` script from the terminal.
+
+```
+$ git clone https://github.com/3M1RY33T/dots-hyprland-professional.git
+$ cd dots-hyprland-professional
+$ sh install.sh
+```
+
+After installation, remember to reload your configuration.
+
 #### Configuration-safe
 
 This script will not install any repositories, but only append the necessary files to the existing repositories (listed in requirements section); making it safe for keepig existing configuration. Additionally, your existing files that will be replaced are placed in a backup folder named ``hyprland-config-backups`` located in ``~/.local/state'`` before installation.
