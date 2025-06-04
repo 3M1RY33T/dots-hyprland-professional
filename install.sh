@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# AUTHOR: 3M1RY33T
+# AUTHOR: github.com/3M1RY33T
 
 set -e
 
