@@ -4,7 +4,7 @@ This is a plugin to an existing configuration by [end-4](https://github.com/end-
 
 ## Motivation
 
-My contribution to this configiration is mainly aimed at the API sidebar; however I have plans for other features in the future. I wanted to keep a professional profile on my Linux Setup, so I started by disabling Waifu and Booru APIs. After that, the API sidebar felt pretty empty so I started my attempts to fill it up with other APIs. Took me a while, but DeepSeek is now available to use in this repository, with more to be implemented soon. 
+My contribution to this configiration is mainly aimed at the API sidebar; however I have plans for other features in the future. I wanted to keep a professional profile on my Linux Setup, so I started by disabling Waifu and Booru APIs. After that, the API sidebar felt pretty empty so I started my attempts to fill it up with other APIs. Took me a while, but Deepseek is now available to use in this repository, with more to be implemented soon. 
 
 **Note:** If you wish to use this profile and also use Waifu & Booru, you can enable it in ``~/.config/ags/modules/.configuration/default_options.jsonc`` by simply uncommenting two lines that are their entries.
 
@@ -12,7 +12,8 @@ My contribution to this configiration is mainly aimed at the API sidebar; howeve
 
 API models in the left sidebar (not including the existing ones from end-4/dots-hyprland):
 
-- DeepSeek
+- Deepseek
+  - Provider: Deepseek 
 - Claude (Unfinished)
 - Copilot (Unfinished)
 
