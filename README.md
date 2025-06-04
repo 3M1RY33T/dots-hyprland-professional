@@ -34,7 +34,7 @@ bash <(curl -sL https://raw.githubusercontent.com/3M1RY33T/dots-hyprland-profess
 
 #### Configuration-safe
 
-This script will not install any repositories, but only append the necessary files to the existing repositories (listed in requirements section); making it safe for keepig existing configuration. Additionally, your existing files that will be replaced are placed in a backup folder named ``hyprland-config-backups`` located in ``~/.local/state'`` before installation. The uninstall script will automatically restore your files that have been replaced during installaton.
+This script will not install any repositories, but only append the necessary files to the existing repositories (listed in requirements section); making it safe for keepig existing configuration. Additionally, your existing files that will be replaced are placed in a backup folder named ``hyprland-config-backups`` located in ``~/.local/state'`` before installation.
 
 ### 2. Manual Installation:
 
@@ -44,9 +44,12 @@ This script will not install any repositories, but only append the necessary fil
 - Go to ``~/.config/ags/modules/sideleft/apis`` and add the ``deepseek.js`` file.
 - Go to ``~/.local/state/ags/user/ai`` and create a ``deepseek_key.txt`` file. You can either add your API key there now or through the sidebar.
 
+#### For removing this plugin, please replicate the steps, and replace the files that are pulled from my repo with the ones that are backed up at ``~/.local/state/backup-dotfiles-XXXXXXXXXX`` 
+- Optionally, also delete the ``~/.local/state/ags/user/ai/deepseek.txt`` file 
+
 ## Professional API Sidebar
 
-![image](ht![deepseek](https://github.com/user-attachments/assets/224dedfd-22a5-4a54-bbe2-fe76c301938e)
-tps://github.com/user-attachments/assets/a154df4c-1115-44a2-a01d-88b1da2210d7)
+![deepseek](https://github.com/user-attachments/assets/d1682ee5-f68e-4b52-8c09-cde9f8c5d880)
+
 
 More AI API models will be available soon, tune in for the progress! Special thanks and respects to the developers whose work I humbly wish to contribute to.
