@@ -39,6 +39,8 @@ This script will not install any repositories, but only append the necessary fil
 
 ### 2. Manual Installation:
 
+**Important:** I uploaded a wider directory of my configuration, but you should refrain from copying the */ags* and */hypr* files directly, you are under risk of losing existing hyprland configuration. Instead, follow the steps below.
+
 - Go to ``~/.config/ags/modules/.configuration`` and replace your ``default_options.jsonc`` file with the one in my repo.
 - Go to ``~/.config/ags/services`` and add the ``deepseek.js`` file.
 - Go to ``~/.config/ags/modules/sideleft`` and replace your ``apiwidgets.js`` with the one in my repo.
