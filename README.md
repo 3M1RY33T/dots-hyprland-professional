@@ -16,7 +16,7 @@ API models in the left sidebar (not including the existing ones from end-4/dots-
   - Provider: Deepseek 
 - Claude (Unfinished)
 
-Persistent chat history
+Persistent chat history (Unfinished)
 
 ## Requirements
 
